@@ -34,7 +34,7 @@
   </a>
 
   <!-- Hover-Sound -->
-  <audio id="hoverSound">
+  <audio id="hoverSound" loop>
     <source src="Crash fx.wav" type="audio/wav">
     Dein Browser unterstützt kein Audio.
   </audio>
@@ -43,10 +43,16 @@
     const textLink = document.getElementById('textLink');
     const hoverSound = document.getElementById('hoverSound');
 
-    // Sound abspielen, wenn Maus über den Text fährt
+    // Sound starten, wenn Maus über Text fährt
     textLink.addEventListener('mouseenter', () => {
-      hoverSound.currentTime = 0; // startet von Anfang
+      hoverSound.currentTime = 0;
       hoverSound.play();
+    });
+
+    // Sound stoppen, wenn Maus den Text verlässt
+    textLink.addEventListener('mouseleave', () => {
+      hoverSound.pause();
+      hoverSound.currentTime = 0; // zurück auf Anfang
     });
   </script>
 
