@@ -12,7 +12,6 @@
       justify-content: center;
       align-items: center;
       background-color: black;
-      color: white;
       font-family: 'Arial', sans-serif;
     }
     a {
@@ -20,6 +19,7 @@
       color: white;
       text-decoration: none;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
     a:hover {
       color: #ff00cc;
@@ -27,21 +27,28 @@
   </style>
 </head>
 <body>
-  <a href="https://www.instagram.com/aft3rp4rty.ap/" target="_blank">
+
+  <!-- Text-Link -->
+  <a id="textLink" href="https://www.instagram.com/aft3rp4rty.ap/" target="_blank">
     I swear it's legendary
   </a>
-  <a id="textLink" href="https://www.instagram.com/aft3rp4rty.ap/" target="_blank">
-  I swear it's legendary
-</a>
-<script>
-  const textLink = document.getElementById('textLink');
-  const hoverSound = document.getElementById('hoverSound');
 
-  textLink.addEventListener('mouseenter', () => {
-    hoverSound.currentTime = 0; // startet von Anfang
-    hoverSound.play();
-  });
-</script>
+  <!-- Hover-Sound -->
+  <audio id="hoverSound">
+    <source src="Crash fx.wav" type="audio/wav">
+    Dein Browser unterstützt kein Audio.
+  </audio>
+
+  <script>
+    const textLink = document.getElementById('textLink');
+    const hoverSound = document.getElementById('hoverSound');
+
+    // Sound abspielen, wenn Maus über den Text fährt
+    textLink.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0; // startet von Anfang
+      hoverSound.play();
+    });
+  </script>
 
 </body>
 </html>
