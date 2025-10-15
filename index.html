@@ -31,7 +31,7 @@
       color: #ff00cc;
     }
 
-    /* Bild, das nach 2 Minuten erscheint */
+    /* Bild, das nach 10 Sekunden erscheint */
     #fullImage {
       display: none;
       position: fixed;
@@ -79,7 +79,7 @@
       hoverSound.currentTime = 0;
     });
 
-    // Timer für 2 Minuten
+    // Timer für 10 Sekunden (10.000 ms)
     setTimeout(() => {
       // Text und Sound ausblenden
       textLink.style.display = 'none';
@@ -88,7 +88,7 @@
 
       // Vollbild-Bild anzeigen
       fullImage.style.display = 'block';
-    }, 120000); // 120.000 ms = 2 Minuten
+    }, 10000); // 10.000 ms = 10 Sekunden
   </script>
 
 </body>
